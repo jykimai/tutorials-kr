@@ -62,7 +62,7 @@ plt.ion()   # 반응형 모드
 #     1084239450_e76e00b7e7.jpg,70,236,71,257, ... ,128,312
 #
 # 이제 CSV에서 이미지 이름과 그에 해당하는 데이터(annotation)을 가져와 보겠습니다. 예시로 person-7.jpg가 있는
-# 65번째 줄(row index number)을 가져오겠습니다.이미지 이름을 읽어 ``img_name`` 에 저장하고, 데이터는 (L, 2)
+# 65번째 줄(row index number)을 가져오겠습니다. 이미지 이름을 읽어 ``img_name`` 에 저장하고, 데이터는 (L, 2)
 # 배열인 ``landmarks`` 에 저장합니다. 이 때 L은 해당 행의 랜드마크의 개수입니다.
 
 landmarks_frame = pd.read_csv('data/faces/face_landmarks.csv')
@@ -153,7 +153,7 @@ class FaceLandmarksDataset(Dataset):
 
 ######################################################################
 # 클래스를 인스턴스화 하고 데이터 샘플을 통해서 반복해봅시다.
-# 첫번째 4개의 샘플의 크기를 출력 하고, 샘플들의 랜드마크(landmarks)를 보여줄 것 입니다.
+# 처음 4개의 샘플의 크기를 출력 하고, 샘플들의 랜드마크(landmarks)를 보여줄 것입니다.
 #
 
 face_dataset = FaceLandmarksDataset(csv_file='data/faces/face_landmarks.csv',
@@ -183,7 +183,7 @@ for i, sample in enumerate(face_dataset):
 # 대부분의 신경망(neural networks)은 고정된 크기의 이미지를 입력으로 받는 것을 가정하고 있습니다.
 # 그러므로 몇 가지 전처리 코드를 작성하도록 하겠습니다.
 #
-# 다음의 3가지의 변형(transforms)을 만들어 보겠습니다:
+# 다음 3가지의 변형(transforms)을 만들어 보겠습니다:
 #
 # - ``Rescale``: 이미지의 크기를 조절합니다.
 # - ``RandomCrop``: 이미지를 무작위로 자릅니다.
